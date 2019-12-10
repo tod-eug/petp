@@ -1,4 +1,10 @@
 package widgets;
 
-public class SelectCompany {
+import core.widget.AbstractWidget;
+
+public class SelectCompany extends AbstractWidget {
+    @Override
+    protected void init() {
+
+    }
 }

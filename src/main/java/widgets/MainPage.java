@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage extends AbstractWidget {
     private SelenideElement $addOffer;
 
-    MainPage() {
+    public MainPage() {
         elements.put("new offer", $addOffer);
     }
 

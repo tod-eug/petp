@@ -10,7 +10,7 @@ public class SelectYear extends AbstractWidget {
 
     private SelenideElement $2017;
 
-    SelectYear() {
+    public SelectYear() {
         elements.put("2017", $2017);
     }
     @Override

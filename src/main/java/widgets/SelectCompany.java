@@ -10,7 +10,7 @@ public class SelectCompany extends AbstractWidget {
 
     private SelenideElement $bmw;
 
-    SelectCompany() {
+    public SelectCompany() {
         elements.put("bmw", $bmw);
     }
     @Override

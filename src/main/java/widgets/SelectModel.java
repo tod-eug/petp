@@ -11,7 +11,7 @@ public class SelectModel extends AbstractWidget {
     private SelenideElement $company;
     private SelenideElement $m5;
 
-    SelectModel() {
+    public SelectModel() {
         elements.put("company name", $company);
         elements.put("m5", $m5);
     }

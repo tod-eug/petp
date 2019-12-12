@@ -6,15 +6,15 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class SelectCompany extends AbstractWidget {
+public class MainPage extends AbstractWidget {
+    private SelenideElement $addOffer;
 
-    private SelenideElement $bmw;
-
-    SelectCompany() {
-        elements.put("bmw", $bmw);
+    MainPage() {
+        elements.put("new offer", $addOffer);
     }
+
     @Override
     protected void init() {
-        $bmw = $(By.xpath("//img[contains(text(), 'BMW')]"));
+        $addOffer = $(By.cssSelector(".HeaderAddOfferButton"));
     }
 }

@@ -20,8 +20,22 @@ public class Thens {
     }
 
     @Then("^element \"(.*)\" should be visible$")
-    public void elementShouldBeVisible(String element, String widget) {
+    public void elementShouldBeVisible(String element) {
         WidgetStorage widgetStorage = new WidgetStorage();
         widgetStorage.getElement(element).scrollIntoView(false).shouldBe(Condition.visible);
     }
+
+    @Then("^element \"(.*)\" should have class \"(.*)\" in widget (.*)$")
+    public void elementShouldBeInactiveInWidget(String element, String cssClass, String widget) {
+        WidgetStorage widgetStorage = new WidgetStorage();
+        widgetStorage.getElement(element, widget).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
+    }
+
+    @Then("element \"(.*)\" should have class \"(.*)\"")
+    public void elementShouldBeInactive(String element, String cssClass) {
+        WidgetStorage widgetStorage = new WidgetStorage();
+        widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
+    }
+
+
 }

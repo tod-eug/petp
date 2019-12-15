@@ -17,7 +17,7 @@ public class SelectModel extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $company = $(By.cssSelector("..mmm-line-item.mmm-line-item_visible.i-bem"));
+        $company = $(By.cssSelector(".mmm-line-item.mmm-line-item_visible.i-bem"));
         $m5 = $(By.xpath("//div[contains(text(), 'M5')]"));
     }
 }

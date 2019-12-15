@@ -1,9 +1,6 @@
 package core.widget;
 
-import widgets.MainPage;
-import widgets.SelectCompany;
-import widgets.SelectModel;
-import widgets.SelectYear;
+import widgets.*;
 
 public class WidgetStorage extends AbstractWidget {
 
@@ -14,6 +11,9 @@ public class WidgetStorage extends AbstractWidget {
         widgets.put("select company", new SelectCompany());
         widgets.put("select model", new SelectModel());
         widgets.put("select year", new SelectYear());
+        widgets.put("add advertisement", new AddAdvertisement());
+
+        widgets.put("progress bar", new ProgressBar());
     }
 
 

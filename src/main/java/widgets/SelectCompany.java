@@ -15,6 +15,6 @@ public class SelectCompany extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $bmw = $(By.xpath("//img[contains(text(), 'BMW')]"));
+        $bmw = $(By.xpath("//img[@title='BMW']/.."));
     }
 }

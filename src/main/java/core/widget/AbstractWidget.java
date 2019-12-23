@@ -13,15 +13,12 @@ public abstract class AbstractWidget {
     protected HashMap<String, SelenideElement> elements = new HashMap<>();
     protected HashMap<String, ElementsCollection> lists = new HashMap<>();
 
-    protected SelenideElement contextDom = null;
-
     private String getWidgetFromWidgets;
     private Integer setNumberToGettingWidget;
     private String setContextPathToGettingWidget;
 
-    private String currentWidget = "";
+    protected SelenideElement contextDom = null;
     private Integer currentWidgetNumber = 0;
-    private String contextPath = "";
 
 
     /**
@@ -43,7 +40,7 @@ public abstract class AbstractWidget {
      * @param contextDom dom element
      */
     public AbstractWidget(String path, SelenideElement contextDom) {
-        setContext(path);
+        this(path);
         this.contextDom = contextDom;
         init();
     }
@@ -55,7 +52,7 @@ public abstract class AbstractWidget {
      * @param currentWidgetNumber widget number
      */
     public AbstractWidget(String path, int currentWidgetNumber) {
-        setContext(path);
+        this(path);
         this.currentWidgetNumber = currentWidgetNumber;
         init();
     }
@@ -68,7 +65,7 @@ public abstract class AbstractWidget {
      * @param contextDom          dom element
      */
     public AbstractWidget(String path, int currentWidgetNumber, SelenideElement contextDom) {
-        setContext(path);
+        this(path);
         this.contextDom = contextDom;
         this.currentWidgetNumber = currentWidgetNumber;
         init();
@@ -96,11 +93,13 @@ public abstract class AbstractWidget {
      */
     public SelenideElement getElement(String element) {
         SelenideElement selenideElement;
-        try {
-            selenideElement = widgets.get(currentWidget).elements.get(element.toLowerCase());
-        } catch (NullPointerException e) {
-            throw new ArgumentNotFoundException(String.format("Не найден элемент \"%s\" в виджете \"%s\"", element, currentWidget));
-        }
+        if (getWidgetFromWidgets != null) {
+            try {
+                selenideElement = widgets.get(getWidgetFromWidgets).elements.get(element.toLowerCase());
+            } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("Не найден элемент \"%s\" в виджете \"%s\"", element, getWidgetFromWidgets));
+            }
+        } else {selenideElement = elements.get(element.toLowerCase());}
         return selenideElement;
     }
 
@@ -111,11 +110,13 @@ public abstract class AbstractWidget {
      */
     public ElementsCollection getList(String list) {
         ElementsCollection elementsCollection;
-        try {
-            elementsCollection = widgets.get(currentWidget).lists.get(list.toLowerCase());
-        } catch (NullPointerException e) {
-            throw new ArgumentNotFoundException(String.format("Не найден список \"%s\" в виджете \"%s\"", list, currentWidget));
-        }
+        if (getWidgetFromWidgets != null) {
+            try {
+                elementsCollection = widgets.get(getWidgetFromWidgets).lists.get(list.toLowerCase());
+            } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("Не найден список \"%s\" в виджете \"%s\"", list, getWidgetFromWidgets));
+            }
+        } else {elementsCollection = lists.get(list.toLowerCase());}
         return elementsCollection;
     }
 
@@ -125,26 +126,33 @@ public abstract class AbstractWidget {
      *
      * @return context
      */
-    public String getContextPath() {
-        return contextPath;
+    public SelenideElement getContext() {
+        if (getWidgetFromWidgets != null) {
+            try {
+                contextDom = widgets.get(getWidgetFromWidgets).getContext();
+            } catch (IllegalArgumentException e) {
+                throw new ArgumentNotFoundException("ContextDom not found");
+            }
+        }
+        return contextDom;
     }
 
     public int getCurrentWidgetNumber() {
         return currentWidgetNumber;
     }
 
-    /**
-     * Use context if next element in the same widget. Set context and work in this widget.
-     * When you need new widget set it.
-     * @param widget save widget to current widget
-     */
-    private void setContext(String widget) {
-        currentWidget = widget.toLowerCase();
-    }
-
-    private void clearContext() {
-        currentWidget = null;
-    }
+//    /**currentWidgetNumber
+//     * Use context if next element in the same widget. Set context and work in this widget.
+//     * When you need new widget set it.
+//     * @param widget save widget to current widget
+//     */
+//    private void setContext(String widget) {
+//        currentWidget = widget.toLowerCase();
+//    }
+//
+//    private void clearContext() {
+//        currentWidget = null;
+//    }
 
     /**
      * Form elements initialization

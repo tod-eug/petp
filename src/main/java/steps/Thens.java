@@ -34,7 +34,7 @@ public class Thens {
         widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
     }
 
-    @Then("(?:element|button|field|form|icon) \"(.*)\" should have class \"(.*)\"")
+    @Then("^(?:element|button|field|form|icon) \"(.*)\" should have class \"(.*)\"$")
     public void elementShouldHaveClassWithoutContext(String element, String cssClass) {
         WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
@@ -47,7 +47,7 @@ public class Thens {
         widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.text(text));
     }
 
-    @Then("(?:element|button|field|form) \"(.*)\" should have text \"(.*)\"")
+    @Then("^(?:element|button|field|form) \"(.*)\" should have text \"(.*)\"$")
     public void elementShouldHaveTextWithoutContext(String element, String text) {
         WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.text(text));

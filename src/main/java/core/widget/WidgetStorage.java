@@ -10,16 +10,16 @@ public class WidgetStorage extends AbstractWidget {
     public WidgetStorage(String contextPath) {
         super(contextPath);
 
-        widgets.put("main", new MainPage(getContextPath()));
-        widgets.put("select company", new SelectCompany(getContextPath()));
-        widgets.put("select model", new SelectModel(getContextPath()));
-        widgets.put("select year", new SelectYear(getContextPath()));
-        widgets.put("add advertisement", new AddAdvertisement(getContextPath()));
+        widgets.put("main", new MainPage(contextPath));
+        widgets.put("select company", new SelectCompany(contextPath));
+        widgets.put("select model", new SelectModel(contextPath));
+        widgets.put("select year", new SelectYear(contextPath));
+        widgets.put("add advertisement", new AddAdvertisement(contextPath));
 
-        widgets.put("progress bar", new ProgressBar(getContextPath()));
+        widgets.put("progress bar", new ProgressBar(contextPath));
 
-        widgets.put("search car", new SearchCar(getContextPath()));
-        widgets.put("result item", new ResultItem(getContextPath(), getCurrentWidgetNumber()));
+        widgets.put("search car", new SearchCar(contextPath));
+        widgets.put("result item", new ResultItem(contextPath, getCurrentWidgetNumber()));
     }
 
 

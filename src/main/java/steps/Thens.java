@@ -1,6 +1,7 @@
 package steps;
 
 import com.codeborne.selenide.Condition;
+import core.DataExchanger;
 import core.widget.WidgetStorage;
 import io.cucumber.java.en.Then;
 
@@ -13,29 +14,43 @@ public class Thens {
         $("body").shouldHave(Condition.text(text));
     }
 
-    @Then("^element \"(.*)\" should be visible in widget (.*)$")
-    public void elementShouldBeVisibleInWidget(String element, String widget) {
-        WidgetStorage widgetStorage = new WidgetStorage();
-        widgetStorage.getElement(element, widget).scrollIntoView(false).shouldBe(Condition.visible);
-    }
-
-    @Then("^element \"(.*)\" should be visible$")
-    public void elementShouldBeVisible(String element) {
-        WidgetStorage widgetStorage = new WidgetStorage();
+    @Then("^(?:element|button|field|form|icon) \"(.*)\" should be visible in widget (.*)$")
+    public void elementShouldBeVisible(String element, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).shouldBe(Condition.visible);
     }
 
-    @Then("^element \"(.*)\" should have class \"(.*)\" in widget (.*)$")
-    public void elementShouldBeInactiveInWidget(String element, String cssClass, String widget) {
-        WidgetStorage widgetStorage = new WidgetStorage();
-        widgetStorage.getElement(element, widget).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
+    @Then("^(?:element|button|field|form|icon) \"(.*)\" should be visible$")
+    public void elementShouldBeVisibleWithoutContext(String element) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).shouldBe(Condition.visible);
     }
 
-    @Then("element \"(.*)\" should have class \"(.*)\"")
-    public void elementShouldBeInactive(String element, String cssClass) {
-        WidgetStorage widgetStorage = new WidgetStorage();
+    @Then("^(?:element|button|field|form|icon) \"(.*)\" should have class \"(.*)\" in widget (.*)$")
+    public void elementShouldHaveClass(String element, String cssClass, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
     }
 
+    @Then("(?:element|button|field|form|icon) \"(.*)\" should have class \"(.*)\"")
+    public void elementShouldHaveClassWithoutContext(String element, String cssClass) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.cssClass(cssClass));
+    }
+
+    @Then("^(?:element|button|field|form) \"(.*)\" should have text \"(.*)\" in widget (.*)$")
+    public void elementShouldHaveText(String element, String text, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.text(text));
+    }
+
+    @Then("(?:element|button|field|form) \"(.*)\" should have text \"(.*)\"")
+    public void elementShouldHaveTextWithoutContext(String element, String text) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).shouldHave(Condition.text(text));
+    }
 
 }

@@ -1,4 +1,4 @@
-package widgets;
+package widgets.newAdvertisment;
 
 import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
@@ -10,7 +10,8 @@ public class SelectYear extends AbstractWidget {
 
     private SelenideElement $2017;
 
-    public SelectYear() {
+    public SelectYear(String contextPath) {
+        super(contextPath);
         elements.put("2017", $2017);
     }
     @Override

@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.exceptions.ArgumentNotFoundException;
 
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public abstract class AbstractWidget {
 
@@ -12,17 +13,86 @@ public abstract class AbstractWidget {
     protected HashMap<String, SelenideElement> elements = new HashMap<>();
     protected HashMap<String, ElementsCollection> lists = new HashMap<>();
 
-    public static String currentWidget;
+    protected SelenideElement contextDom = null;
 
-    public AbstractWidget() {
+    private String getWidgetFromWidgets;
+    private Integer setNumberToGettingWidget;
+    private String setContextPathToGettingWidget;
+
+    private String currentWidget = "";
+    private Integer currentWidgetNumber = 0;
+    private String contextPath = "";
+
+
+    /**
+     * This constructor create widget with context
+     *
+     * @param contextPath context from test
+     */
+    public AbstractWidget(String contextPath) {
+        if (contextPath != null) {
+            parseContextWidget(contextPath);
+        }
         init();
     }
 
+    /**
+     * This constructor, create widget with context element
+     *
+     * @param path       context widget
+     * @param contextDom dom element
+     */
+    public AbstractWidget(String path, SelenideElement contextDom) {
+        setContext(path);
+        this.contextDom = contextDom;
+        init();
+    }
+
+    /**
+     * This constructor create widget contains list of widgets
+     *
+     * @param path                context widget
+     * @param currentWidgetNumber widget number
+     */
+    public AbstractWidget(String path, int currentWidgetNumber) {
+        setContext(path);
+        this.currentWidgetNumber = currentWidgetNumber;
+        init();
+    }
+
+    /**
+     * This constructor create widget contains list of widgets with context element
+     *
+     * @param path                context widget
+     * @param currentWidgetNumber widget number
+     * @param contextDom          dom element
+     */
+    public AbstractWidget(String path, int currentWidgetNumber, SelenideElement contextDom) {
+        setContext(path);
+        this.contextDom = contextDom;
+        this.currentWidgetNumber = currentWidgetNumber;
+        init();
+    }
+
+    private void parseContextWidget(String context) {
+        getWidgetFromWidgets = Pattern.compile("^([А-Яа-яЁё \\-A-Za-z]+)").matcher(context).toString().toLowerCase();
+        setNumberToGettingWidget = Integer.parseInt(Pattern.compile("[0-9]+").matcher(context).toString());
+        if (setNumberToGettingWidget != null) setNumberToGettingWidget = setNumberToGettingWidget - 1;
+
+        if (context.contains("/")) {
+            setContextPathToGettingWidget = context.replaceFirst("$getWidgetFromWidgets", "");
+            if (setContextPathToGettingWidget.substring(0, 1).equals("[")) {
+                setContextPathToGettingWidget = setContextPathToGettingWidget.replaceFirst("[${setNumberToGettingWidget + 1}]/", "").toLowerCase();
+            } else {
+                setContextPathToGettingWidget.replaceFirst("/", "").toLowerCase();
+            }
+        }
+    }
 
     /**
      * Get element from current widget
      * @param element element in widget
-     * @return
+     * @return element
      */
     public SelenideElement getElement(String element) {
         SelenideElement selenideElement;
@@ -32,17 +102,6 @@ public abstract class AbstractWidget {
             throw new ArgumentNotFoundException(String.format("Не найден элемент \"%s\" в виджете \"%s\"", element, currentWidget));
         }
         return selenideElement;
-    }
-
-    /**
-     * Get element from new widget
-     * @param element element in widget
-     * @param widget new widget
-     * @return
-     */
-    public SelenideElement getElement(String element, String widget) {
-        setContext(widget);
-        return getElement(element);
     }
 
     /**
@@ -61,14 +120,17 @@ public abstract class AbstractWidget {
     }
 
     /**
-     * Get list from new widget
-     * @param list list in widget
-     * @param widget new widget
-     * @return
+     * Get context
+     * Context is a dom element which used for looking next element not from root element, but from current
+     *
+     * @return context
      */
-    public ElementsCollection getList(String list, String widget) {
-        setContext(widget);
-        return  getList(list);
+    public String getContextPath() {
+        return contextPath;
+    }
+
+    public int getCurrentWidgetNumber() {
+        return currentWidgetNumber;
     }
 
     /**

@@ -1,33 +1,48 @@
 package steps;
 
+import com.codeborne.selenide.Condition;
+import core.DataExchanger;
 import core.widget.WidgetStorage;
 import io.cucumber.java.en.When;
 
 public class Whens {
 
-    @When("^click on the element \"(.*)\" in widget (.*)$")
-    public void clickOnTheElementInWidget(String element, String widget) {
-        WidgetStorage widgetStorage = new WidgetStorage();
-        //widgetStorage.setContext(widget);
-        widgetStorage.getElement(element, widget).scrollIntoView(false).hover().click();
-    }
-
-    @When("^click on the element \"(.*)\"$")
-    public void clickOnTheElement(String element) {
-        WidgetStorage widgetStorage = new WidgetStorage();
+    @When("^click on the (?:element|button|field|form|icon) \"(.*)\" in widget (.*)$")
+    public void clickOnTheElement(String element, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).hover().click();
     }
 
-    @When("^fill element \"(.*)\" with value \"(.*)\" in widget (.*)$")
-    public void fillElementInWidget(String element, String value, String widget) {
-        WidgetStorage widgetStorage = new WidgetStorage();
-        widgetStorage.getElement(element, widget).scrollIntoView(false).sendKeys(value);
+    @When("^click on the (?:element|button|field|form|icon) \"(.*)\"$")
+    public void clickOnTheElementWithoutContext(String element) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).hover().click();
     }
 
-    @When("^fill element \"(.*)\" with value \"(.*)\"$")
-    public void fillElement(String element, String value) {
-        WidgetStorage widgetStorage = new WidgetStorage();
+    @When("^fill (?:element|field|form) \"(.*)\" with value \"(.*)\" in widget (.*)$")
+    public void fillElement(String element, String value, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
         widgetStorage.getElement(element).scrollIntoView(false).sendKeys(value);
     }
 
+    @When("^fill (?:element|field|form) \"(.*)\" with value \"(.*)\"$")
+    public void fillElementWithoutContext(String element, String value) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getElement(element).scrollIntoView(false).sendKeys(value);
+    }
+
+    @When("^choose value \"(.*)\" from list \"(.*)\" in widget (.*)$")
+    public void chooseElementFromList(String value, String list, String widget) {
+        DataExchanger.saveValue("CONTEXT", widget);
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getList(list).find(Condition.text(value)).waitUntil(Condition.visible, 10000).click();
+    }
+
+    @When("^choose value \"(.*)\" from list \"(.*)\"$")
+    public void chooseElementFromListWithoutContext(String value, String list) {
+        WidgetStorage widgetStorage = new WidgetStorage(DataExchanger.getValue("CONTEXT"));
+        widgetStorage.getList(list).find(Condition.text(value)).waitUntil(Condition.visible, 10000).click();
+    }
 }

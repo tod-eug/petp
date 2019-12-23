@@ -2,7 +2,7 @@
 
   Feature: As a client, I want correct work statuses of quality ad, so that I can control filling ad
 
-    @Regress
+#    @Regress
     Scenario: Filling company and model
       Given site "https://auto.ru/" opened
       When click on the element "New Offer" in widget Main
@@ -19,7 +19,7 @@
 
 
 #      Refactor preconditions through inject cookie
-    @Regress
+#    @Regress
     Scenario: Filling color and run
       Given site "https://auto.ru/" opened
       When click on the element "New Offer" in widget Main

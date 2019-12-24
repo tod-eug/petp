@@ -2,6 +2,7 @@ package core.widget;
 
 import widgets.*;
 import widgets.newAdvertisment.*;
+import widgets.searchCar.Filter;
 import widgets.searchCar.ResultItem;
 import widgets.searchCar.SearchCar;
 
@@ -19,7 +20,8 @@ public class WidgetStorage extends AbstractWidget {
         widgets.put("progress bar", new ProgressBar(contextPath));
 
         widgets.put("search car", new SearchCar(contextPath));
-        widgets.put("result item", new ResultItem(contextPath, getCurrentWidgetNumber()));
+        widgets.put("filter", new Filter(contextPath));
+        widgets.put("result item", new ResultItem(getContextPathToGettingWidget(), getCurrentWidgetNumber()));
     }
 
 

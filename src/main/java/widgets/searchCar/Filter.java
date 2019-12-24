@@ -11,20 +11,20 @@ import static com.codeborne.selenide.Selenide.$$;
 public class Filter extends AbstractWidget {
 
     private SelenideElement $applyButton;
+    private SelenideElement $bodyType;
     private ElementsCollection $bodyTypes;
-    private ElementsCollection $companies;
 
     public Filter(String contextPath) {
         super(contextPath);
         elements.put("apply", $applyButton);
+        elements.put("body type", $bodyType);
         lists.put("body types", $bodyTypes);
-        lists.put("companies", $companies);
     }
 
     @Override
     protected void init() {
+        $bodyType = $(By.xpath("//span[contains(text(), 'Кузов')]/../.."));
         $applyButton = $(By.cssSelector(".ButtonWithLoader__content"));
         $bodyTypes = $$(By.cssSelector(".MenuItem.MenuItem_size_m"));
-        $companies = $$(By.cssSelector(".MenuItem.MenuItem_size_m"));
     }
 }

@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.exceptions.ArgumentNotFoundException;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class AbstractWidget {
@@ -14,7 +15,6 @@ public abstract class AbstractWidget {
     protected HashMap<String, ElementsCollection> lists = new HashMap<>();
 
     private String getWidgetFromWidgets;
-    private Integer setNumberToGettingWidget;
     private String setContextPathToGettingWidget;
 
     protected SelenideElement contextDom = null;
@@ -33,17 +33,6 @@ public abstract class AbstractWidget {
         init();
     }
 
-    /**
-     * This constructor, create widget with context element
-     *
-     * @param path       context widget
-     * @param contextDom dom element
-     */
-    public AbstractWidget(String path, SelenideElement contextDom) {
-        this(path);
-        this.contextDom = contextDom;
-        init();
-    }
 
     /**
      * This constructor create widget contains list of widgets
@@ -57,32 +46,36 @@ public abstract class AbstractWidget {
         init();
     }
 
-    /**
-     * This constructor create widget contains list of widgets with context element
-     *
-     * @param path                context widget
-     * @param currentWidgetNumber widget number
-     * @param contextDom          dom element
-     */
-    public AbstractWidget(String path, int currentWidgetNumber, SelenideElement contextDom) {
-        this(path);
-        this.contextDom = contextDom;
-        this.currentWidgetNumber = currentWidgetNumber;
-        init();
-    }
 
     private void parseContextWidget(String context) {
-        getWidgetFromWidgets = Pattern.compile("^([А-Яа-яЁё \\-A-Za-z]+)").matcher(context).toString().toLowerCase();
-        setNumberToGettingWidget = Integer.parseInt(Pattern.compile("[0-9]+").matcher(context).toString());
-        if (setNumberToGettingWidget != null) setNumberToGettingWidget = setNumberToGettingWidget - 1;
+        Pattern pattern;
+        Matcher matcher;
+        String[] args;
+        String delimeter = "/";
 
-        if (context.contains("/")) {
-            setContextPathToGettingWidget = context.replaceFirst("$getWidgetFromWidgets", "");
-            if (setContextPathToGettingWidget.substring(0, 1).equals("[")) {
-                setContextPathToGettingWidget = setContextPathToGettingWidget.replaceFirst("[${setNumberToGettingWidget + 1}]/", "").toLowerCase();
-            } else {
-                setContextPathToGettingWidget.replaceFirst("/", "").toLowerCase();
+        args = context.toLowerCase().split(delimeter);
+        currentWidgetNumber = 0;
+
+        if (args.length > 1) {
+            if (args[1].matches("(.*)\\[[0-9]+\\]$")) {
+                pattern = Pattern.compile("\\[([0-9]+)\\]$");
+                matcher = pattern.matcher(args[1]);
+                if (matcher.find()) {
+                    currentWidgetNumber = Integer.parseInt(matcher.group(1)) - 1;
+                }
             }
+            pattern = Pattern.compile("[A-z ]+$");
+            matcher = pattern.matcher(args[0]);
+            if (matcher.find()) {
+                getWidgetFromWidgets = matcher.group(0);
+            }
+            setContextPathToGettingWidget =
+                    args[1].toLowerCase()
+                            .replaceFirst("[0-9]+", "")
+                            .replace("[", "")
+                            .replace("]", "");
+        } else {
+            getWidgetFromWidgets = args[0];
         }
     }
 
@@ -121,38 +114,18 @@ public abstract class AbstractWidget {
     }
 
     /**
-     * Get context
-     * Context is a dom element which used for looking next element not from root element, but from current
-     *
-     * @return context
+     * Get Context for countable widget
+     * @return contextPath
      */
-    public SelenideElement getContext() {
-        if (getWidgetFromWidgets != null) {
-            try {
-                contextDom = widgets.get(getWidgetFromWidgets).getContext();
-            } catch (IllegalArgumentException e) {
-                throw new ArgumentNotFoundException("ContextDom not found");
-            }
-        }
-        return contextDom;
+    public String getContextPathToGettingWidget() {
+        return setContextPathToGettingWidget;
     }
+
 
     public int getCurrentWidgetNumber() {
         return currentWidgetNumber;
     }
 
-//    /**currentWidgetNumber
-//     * Use context if next element in the same widget. Set context and work in this widget.
-//     * When you need new widget set it.
-//     * @param widget save widget to current widget
-//     */
-//    private void setContext(String widget) {
-//        currentWidget = widget.toLowerCase();
-//    }
-//
-//    private void clearContext() {
-//        currentWidget = null;
-//    }
 
     /**
      * Form elements initialization

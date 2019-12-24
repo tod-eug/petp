@@ -5,6 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import core.exceptions.ArgumentNotFoundException;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class AbstractWidget {
 
@@ -12,77 +14,137 @@ public abstract class AbstractWidget {
     protected HashMap<String, SelenideElement> elements = new HashMap<>();
     protected HashMap<String, ElementsCollection> lists = new HashMap<>();
 
-    public static String currentWidget;
+    private String getWidgetFromWidgets;
+    private String setContextPathToGettingWidget;
 
-    public AbstractWidget() {
+    protected SelenideElement contextDom = null;
+    private Integer currentWidgetNumber = 0;
+
+
+    /**
+     * This constructor create widget with context
+     *
+     * @param contextPath context from test
+     */
+    public AbstractWidget(String contextPath) {
+        if (contextPath != null) {
+            parseContextWidget(contextPath);
+        }
         init();
     }
 
 
     /**
-     * Get element from current widget
+     * This constructor create widget contains list of widgets
+     *
+     * @param path                context widget
+     * @param currentWidgetNumber widget number
+     */
+    public AbstractWidget(String path, int currentWidgetNumber) {
+        this(path);
+        this.currentWidgetNumber = currentWidgetNumber;
+        init();
+    }
+
+
+    /**
+     * Parsing context from widget
+     * @param context
+     */
+    private void parseContextWidget(String context) {
+        Pattern pattern;
+        Matcher matcher;
+        String[] args;
+        String delimeter = "/";
+
+        args = context.toLowerCase().split(delimeter);
+        currentWidgetNumber = 0;
+
+        if (args.length > 1) {
+            if (args[1].matches("(.*)\\[[0-9]+\\]$")) {
+                pattern = Pattern.compile("\\[([0-9]+)\\]$");
+                matcher = pattern.matcher(args[1]);
+                if (matcher.find()) {
+                    currentWidgetNumber = Integer.parseInt(matcher.group(1)) - 1;
+                }
+            }
+            pattern = Pattern.compile("[A-z ]+$");
+            matcher = pattern.matcher(args[0]);
+            if (matcher.find()) {
+                getWidgetFromWidgets = matcher.group(0);
+            }
+            setContextPathToGettingWidget =
+                    args[1].toLowerCase()
+                            .replaceFirst("[0-9]+", "")
+                            .replace("[", "")
+                            .replace("]", "");
+        } else {
+            getWidgetFromWidgets = args[0];
+        }
+    }
+
+    /**
+     * Get element from widget
      * @param element element in widget
-     * @return
+     * @return SelenideElement
      */
     public SelenideElement getElement(String element) {
         SelenideElement selenideElement;
-        try {
-            selenideElement = widgets.get(currentWidget).elements.get(element.toLowerCase());
-        } catch (NullPointerException e) {
-            throw new ArgumentNotFoundException(String.format("Не найден элемент \"%s\" в виджете \"%s\"", element, currentWidget));
-        }
+         if (setContextPathToGettingWidget != null) {
+             try {
+                selenideElement = widgets.get(setContextPathToGettingWidget).elements.get(element.toLowerCase());
+             } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("Element \"%s\" not found in widget \"%s\"", element, setContextPathToGettingWidget));
+            }
+         } else {
+             try {
+                 selenideElement = widgets.get(getWidgetFromWidgets).elements.get(element.toLowerCase());
+             } catch (NullPointerException e) {
+                 throw new ArgumentNotFoundException(String.format("Element \"%s\" not found in widget \"%s\"", element, getWidgetFromWidgets));
+             }
+         }
         return selenideElement;
     }
 
     /**
-     * Get element from new widget
-     * @param element element in widget
-     * @param widget new widget
-     * @return
-     */
-    public SelenideElement getElement(String element, String widget) {
-        setContext(widget);
-        return getElement(element);
-    }
-
-    /**
-     * Get list from current widget
+     * Get list from widget
      * @param list list in widget
-     * @return
+     * @return ElementsCollection
      */
     public ElementsCollection getList(String list) {
         ElementsCollection elementsCollection;
-        try {
-            elementsCollection = widgets.get(currentWidget).lists.get(list.toLowerCase());
-        } catch (NullPointerException e) {
-            throw new ArgumentNotFoundException(String.format("Не найден список \"%s\" в виджете \"%s\"", list, currentWidget));
+        if (setContextPathToGettingWidget != null) {
+            try {
+                elementsCollection = widgets.get(setContextPathToGettingWidget).lists.get(list.toLowerCase());
+            } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("List \"%s\" not found in widget \"%s\"", list, setContextPathToGettingWidget));
+            }
+        } else {
+            try {
+                elementsCollection = widgets.get(getWidgetFromWidgets).lists.get(list.toLowerCase());
+            } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("List \"%s\" not found in widget \"%s\"", list, getWidgetFromWidgets));
+            }
         }
         return elementsCollection;
     }
 
     /**
-     * Get list from new widget
-     * @param list list in widget
-     * @param widget new widget
-     * @return
+     * Get context for countable widget
+     * @return contextPath
      */
-    public ElementsCollection getList(String list, String widget) {
-        setContext(widget);
-        return  getList(list);
+    public String getContextPathToGettingWidget() {
+        return setContextPathToGettingWidget;
     }
 
     /**
-     * Use context if next element in the same widget. Set context and work in this widget.
-     * When you need new widget set it.
-     * @param widget save widget to current widget
+     * Get current widget number for using in locators
+     * @return widget number
      */
-    private void setContext(String widget) {
-        currentWidget = widget.toLowerCase();
+    public int getCurrentWidgetNumber() {
+        return currentWidgetNumber;
     }
 
-    private void clearContext() {
-        currentWidget = null;
-    }
 
     /**
      * Form elements initialization

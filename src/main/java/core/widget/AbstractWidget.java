@@ -47,6 +47,10 @@ public abstract class AbstractWidget {
     }
 
 
+    /**
+     * Parsing context from widget
+     * @param context
+     */
     private void parseContextWidget(String context) {
         Pattern pattern;
         Matcher matcher;
@@ -80,48 +84,63 @@ public abstract class AbstractWidget {
     }
 
     /**
-     * Get element from current widget
+     * Get element from widget
      * @param element element in widget
-     * @return element
+     * @return SelenideElement
      */
     public SelenideElement getElement(String element) {
         SelenideElement selenideElement;
-        if (getWidgetFromWidgets != null) {
-            try {
-                selenideElement = widgets.get(getWidgetFromWidgets).elements.get(element.toLowerCase());
-            } catch (NullPointerException e) {
-                throw new ArgumentNotFoundException(String.format("Не найден элемент \"%s\" в виджете \"%s\"", element, getWidgetFromWidgets));
+         if (setContextPathToGettingWidget != null) {
+             try {
+                selenideElement = widgets.get(setContextPathToGettingWidget).elements.get(element.toLowerCase());
+             } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("Element \"%s\" not found in widget \"%s\"", element, setContextPathToGettingWidget));
             }
-        } else {selenideElement = elements.get(element.toLowerCase());}
+         } else {
+             try {
+                 selenideElement = widgets.get(getWidgetFromWidgets).elements.get(element.toLowerCase());
+             } catch (NullPointerException e) {
+                 throw new ArgumentNotFoundException(String.format("Element \"%s\" not found in widget \"%s\"", element, getWidgetFromWidgets));
+             }
+         }
         return selenideElement;
     }
 
     /**
-     * Get list from current widget
+     * Get list from widget
      * @param list list in widget
-     * @return
+     * @return ElementsCollection
      */
     public ElementsCollection getList(String list) {
         ElementsCollection elementsCollection;
-        if (getWidgetFromWidgets != null) {
+        if (setContextPathToGettingWidget != null) {
+            try {
+                elementsCollection = widgets.get(setContextPathToGettingWidget).lists.get(list.toLowerCase());
+            } catch (NullPointerException e) {
+                throw new ArgumentNotFoundException(String.format("List \"%s\" not found in widget \"%s\"", list, setContextPathToGettingWidget));
+            }
+        } else {
             try {
                 elementsCollection = widgets.get(getWidgetFromWidgets).lists.get(list.toLowerCase());
             } catch (NullPointerException e) {
-                throw new ArgumentNotFoundException(String.format("Не найден список \"%s\" в виджете \"%s\"", list, getWidgetFromWidgets));
+                throw new ArgumentNotFoundException(String.format("List \"%s\" not found in widget \"%s\"", list, getWidgetFromWidgets));
             }
-        } else {elementsCollection = lists.get(list.toLowerCase());}
+        }
         return elementsCollection;
     }
 
     /**
-     * Get Context for countable widget
+     * Get context for countable widget
      * @return contextPath
      */
     public String getContextPathToGettingWidget() {
         return setContextPathToGettingWidget;
     }
 
-
+    /**
+     * Get current widget number for using in locators
+     * @return widget number
+     */
     public int getCurrentWidgetNumber() {
         return currentWidgetNumber;
     }

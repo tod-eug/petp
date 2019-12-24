@@ -17,9 +17,9 @@ public class ResultItem extends AbstractWidget {
 
     @Override
     protected void init() {
-        contextDom = $(By.cssSelector(".ListingCars-module__loaderOverlay"));
+        contextDom = $(By.cssSelector(".ListingCars-module__list"));
         $bodyType = contextDom
                 .$$(By.cssSelector(".ListingCars-module__listingItem")).get(getCurrentWidgetNumber())
-                .$$(By.cssSelector(".ListingItemTechSummary-module__cell")).get(1);
+                .$$(By.cssSelector(".ListingItemTechSummary-module__cell")).get(2);
     }
 }

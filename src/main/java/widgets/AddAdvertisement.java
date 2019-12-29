@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class AddAdvertisement extends AbstractWidget {
 
@@ -18,7 +18,7 @@ public class AddAdvertisement extends AbstractWidget {
 
     @Override
     protected void init() {
-        $blueColor = $(By.xpath("//span[@style='background-color: #0433FF']"));
-        $run = $(By.xpath("//input[@name='run']"));
+        $blueColor = s(By.xpath("//span[@style='background-color: #0433FF']"));
+        $run = s(By.xpath("//input[@name='run']"));
     }
 }

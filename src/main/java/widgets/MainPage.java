@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class MainPage extends AbstractWidget {
     private SelenideElement $addOffer;
@@ -15,6 +15,6 @@ public class MainPage extends AbstractWidget {
 
     @Override
     protected void init() {
-        $addOffer = $(By.cssSelector(".HeaderAddOfferButton"));
+        $addOffer = s(By.cssSelector(".HeaderAddOfferButton"));
     }
 }

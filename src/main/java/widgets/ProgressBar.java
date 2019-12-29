@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class ProgressBar extends AbstractWidget {
 
@@ -17,7 +17,7 @@ public class ProgressBar extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $companyAndModel = $(By.cssSelector(".progress-bar__mmm"));
-        $colorAndRun = $(By.cssSelector(".progress-bar__color_run"));
+        $companyAndModel = s(By.cssSelector(".progress-bar__mmm"));
+        $colorAndRun = s(By.cssSelector(".progress-bar__color_run"));
     }
 }

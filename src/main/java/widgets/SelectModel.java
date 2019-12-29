@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class SelectModel extends AbstractWidget {
 
@@ -17,7 +17,7 @@ public class SelectModel extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $company = $(By.cssSelector(".mmm-line-item.mmm-line-item_visible.i-bem"));
-        $m5 = $(By.xpath("//div[contains(text(), 'M5')]"));
+        $company = s(By.cssSelector(".mmm-line-item.mmm-line-item_visible.i-bem"));
+        $m5 = s(By.xpath("//div[contains(text(), 'M5')]"));
     }
 }

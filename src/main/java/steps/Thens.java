@@ -4,13 +4,13 @@ import com.codeborne.selenide.Condition;
 import core.widget.WidgetStorage;
 import io.cucumber.java.en.Then;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class Thens {
 
     @Then("^text \"(.*)\" should be visible$")
     public void textShouldBeVisible(String text) {
-        $("body").shouldHave(Condition.text(text));
+        s("body").shouldHave(Condition.text(text));
     }
 
     @Then("^element \"(.*)\" should be visible in widget (.*)$")

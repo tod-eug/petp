@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class SelectYear extends AbstractWidget {
 
@@ -15,6 +15,6 @@ public class SelectYear extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $2017 = $(By.xpath("//span[contains(text(), '2017')]"));
+        $2017 = s(By.xpath("//span[contains(text(), '2017')]"));
     }
 }

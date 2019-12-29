@@ -1,6 +1,7 @@
 package steps;
 
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.SelenideDriver;
+import core.drivers.SelenideDriverStorage;
 import io.cucumber.java.After;
 
 
@@ -8,6 +9,7 @@ public class Hooks {
 
     @After
     public void afterTest() {
-        WebDriverRunner.getWebDriver().manage().deleteAllCookies();
+        SelenideDriver driver = SelenideDriverStorage.getDriver();
+        driver.clearCookies();
     }
 }

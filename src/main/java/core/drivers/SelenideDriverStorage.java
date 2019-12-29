@@ -9,9 +9,9 @@ import static java.lang.Thread.currentThread;
 
 public class SelenideDriverStorage {
 
-    private Map<Long, SelenideDriver> driverMap = new ConcurrentHashMap<>();
+    private static Map<Long, SelenideDriver> driverMap = new ConcurrentHashMap<>();
 
-    public SelenideDriver getDriver() {
+    public static SelenideDriver getDriver() {
         SelenideDriver driver;
         if (driverMap.containsKey(currentThread().getId())) {
             driver = driverMap.get(currentThread().getId());

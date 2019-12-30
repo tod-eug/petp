@@ -1,4 +1,4 @@
-package widgets;
+package widgets.newAdvertisment;
 
 import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
@@ -10,7 +10,8 @@ public class SelectCompany extends AbstractWidget {
 
     private SelenideElement $bmw;
 
-    public SelectCompany() {
+    public SelectCompany(String contextPath) {
+        super(contextPath);
         elements.put("bmw", $bmw);
     }
     @Override

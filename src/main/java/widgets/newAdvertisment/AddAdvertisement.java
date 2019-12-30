@@ -1,4 +1,4 @@
-package widgets;
+package widgets.newAdvertisment;
 
 import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
@@ -11,7 +11,8 @@ public class AddAdvertisement extends AbstractWidget {
     private SelenideElement $blueColor;
     private SelenideElement $run;
 
-    public AddAdvertisement() {
+    public AddAdvertisement(String contextPath) {
+        super(contextPath);
         elements.put("blue", $blueColor);
         elements.put("run", $run);
     }

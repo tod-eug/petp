@@ -1,4 +1,4 @@
-package widgets;
+package widgets.newAdvertisment;
 
 import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
@@ -11,7 +11,8 @@ public class ProgressBar extends AbstractWidget {
     private SelenideElement $companyAndModel;
     private SelenideElement $colorAndRun;
 
-    public ProgressBar() {
+    public ProgressBar(String contextPath) {
+        super(contextPath);
         elements.put("company and model", $companyAndModel);
         elements.put("color and run", $colorAndRun);
     }

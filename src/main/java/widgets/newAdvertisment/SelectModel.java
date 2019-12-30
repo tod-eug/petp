@@ -1,4 +1,4 @@
-package widgets;
+package widgets.newAdvertisment;
 
 import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
@@ -11,7 +11,8 @@ public class SelectModel extends AbstractWidget {
     private SelenideElement $company;
     private SelenideElement $m5;
 
-    public SelectModel() {
+    public SelectModel(String contextPath) {
+        super(contextPath);
         elements.put("company name", $company);
         elements.put("m5", $m5);
     }

@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static core.utils.SelenideFunctions.ss;
 import static core.utils.SelenideFunctions.s;
 
 public class MainPage extends AbstractWidget {
@@ -21,8 +20,8 @@ public class MainPage extends AbstractWidget {
 
     @Override
     protected void init() {
-        $addOffer = $(By.cssSelector(".HeaderAddOfferButton"));
-        $car = $$(By.cssSelector(".HeaderMenuTitleLink")).findBy(Condition.text("–õ–µ–≥–∫–æ–≤—ã–µ"));
+        $addOffer = s(By.cssSelector(".HeaderAddOfferButton"));
+        $car = ss(By.cssSelector(".HeaderMenuTitleLink")).findBy(Condition.text("ÀÂ„ÍÓ‚˚Â"));
         $addOffer = s(By.cssSelector(".HeaderAddOfferButton"));
     }
 }

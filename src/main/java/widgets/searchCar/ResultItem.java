@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class ResultItem extends AbstractWidget {
 
@@ -17,7 +17,7 @@ public class ResultItem extends AbstractWidget {
 
     @Override
     protected void init() {
-        contextDom = $(By.cssSelector(".ListingCars-module__list"));
+        contextDom = s(By.cssSelector(".ListingCars-module__list"));
         $bodyType = contextDom
                 .$$(By.cssSelector(".ListingCars-module__listingItem")).get(getCurrentWidgetNumber())
                 .$$(By.cssSelector(".ListingItemTechSummary-module__cell")).get(2);

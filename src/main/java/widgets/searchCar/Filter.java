@@ -5,8 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static core.utils.SelenideFunctions.s;
+import static core.utils.SelenideFunctions.ss;
 
 public class Filter extends AbstractWidget {
 
@@ -23,8 +23,8 @@ public class Filter extends AbstractWidget {
 
     @Override
     protected void init() {
-        $bodyType = $(By.xpath("//span[contains(text(), '–ö—É–∑–æ–≤')]/../.."));
-        $applyButton = $(By.cssSelector(".ButtonWithLoader__content"));
-        $bodyTypes = $$(By.cssSelector(".MenuItem.MenuItem_size_m"));
+        $bodyType = s(By.xpath("//span[contains(text(), ' ÛÁÓ‚')]/../.."));
+        $applyButton = s(By.cssSelector(".ButtonWithLoader__content"));
+        $bodyTypes = ss(By.cssSelector(".MenuItem.MenuItem_size_m"));
     }
 }

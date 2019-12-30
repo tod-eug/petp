@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class SearchCar extends AbstractWidget {
 
@@ -16,6 +16,6 @@ public class SearchCar extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $sort = $(By.cssSelector(".ListingFilterPanel-module__sortFilter"));
+        $sort = s(By.cssSelector(".ListingFilterPanel-module__sortFilter"));
     }
 }

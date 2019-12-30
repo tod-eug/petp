@@ -2,12 +2,12 @@ package core;
 
 import core.exceptions.DataExchangerException;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DataExchanger {
 
-    private static Map<String, String> savedValues = new HashMap<>();
+    private static Map<String, String> savedValues = new ConcurrentHashMap<>();
 
     private DataExchanger() {
 

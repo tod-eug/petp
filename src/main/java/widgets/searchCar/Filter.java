@@ -10,21 +10,27 @@ import static core.utils.SelenideFunctions.ss;
 
 public class Filter extends AbstractWidget {
 
-    private SelenideElement $applyButton;
     private SelenideElement $bodyType;
-    private ElementsCollection $bodyTypes;
+    private SelenideElement $company;
+    private SelenideElement $price;
+    private SelenideElement $applyButton;
+    private ElementsCollection $optionsList;
 
     public Filter(String contextPath) {
         super(contextPath);
         elements.put("apply", $applyButton);
         elements.put("body type", $bodyType);
-        lists.put("body types", $bodyTypes);
+        elements.put("company", $company);
+        elements.put("price", $price);
+        lists.put("options list", $optionsList);
     }
 
     @Override
     protected void init() {
-        $bodyType = s(By.xpath("//span[contains(text(), 'Кузов')]/../.."));
+        $bodyType = ss(By.cssSelector(".ListingCarsFilters-module__row")).get(1).$(By.cssSelector(".Select__button"));
+        $company = s(By.cssSelector(".MMMFilter-module__MMMFilter__item"));
         $applyButton = s(By.cssSelector(".ButtonWithLoader__content"));
-        $bodyTypes = ss(By.cssSelector(".MenuItem.MenuItem_size_m"));
+        $price = s(By.name("price_from"));
+        $optionsList = ss(By.cssSelector(".MenuItem.MenuItem_size_m"));
     }
 }

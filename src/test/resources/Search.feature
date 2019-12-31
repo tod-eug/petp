@@ -8,7 +8,10 @@ Feature: As a client, I want to find used car, so I can get actual information
     When click on the element "Car" in widget Main
     Then text "Легковые автомобили" should be visible
     When click on the field "Body type" in widget Filter
-    And choose value "Седан" from list "Body types"
+    And choose value "Седан" from list "Options list"
+    And click on the element "Price"
+    And click on the field "Company"
+    And choose value "BMW" from list "Options list"
     And click on the element "Apply"
     Then element "Body type" should have text "Седан" in widget Search Car/Result Item[1]
     And element "Body type" should have text "Седан" in widget Search Car/Result Item[2]

@@ -7,21 +7,21 @@ import java.util.Map;
 
 public class DataExchanger {
 
-    private static Map<String, String> savedValues = new HashMap<>();
+    private static ThreadLocal<Map<String, String>> savedValues = ThreadLocal.withInitial(HashMap::new);
 
     private DataExchanger() {
 
     }
 
     public static Map<String, String> getSavedValues() {
-        return savedValues;
+        return savedValues.get();
     }
 
     public static String getValue(String key) {
         if (key == null) {
             throw new DataExchangerException("Can not find local variable. Please check variable name.");
         }
-        String result = savedValues.get(key.toLowerCase());
+        String result = savedValues.get().get(key.toLowerCase());
         if (result == null) {
             throw new DataExchangerException("Can not find local variable " + key + ".");
         }
@@ -30,7 +30,7 @@ public class DataExchanger {
 
     public static void saveValue(String key, String value) {
         if (key != null || value != null) {
-            savedValues.put(key.toLowerCase(), value);
+            savedValues.get().put(key.toLowerCase(), value);
         }
     }
 }

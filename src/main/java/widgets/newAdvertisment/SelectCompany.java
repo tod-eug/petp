@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import core.widget.AbstractWidget;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
+import static core.utils.SelenideFunctions.s;
 
 public class SelectCompany extends AbstractWidget {
 
@@ -16,6 +16,6 @@ public class SelectCompany extends AbstractWidget {
     }
     @Override
     protected void init() {
-        $bmw = $(By.xpath("//img[@title='BMW']/.."));
+        $bmw = s(By.xpath("//img[@title='BMW']/.."));
     }
 }

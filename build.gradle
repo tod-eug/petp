@@ -21,6 +21,7 @@ dependencies {
     compile 'io.cucumber:cucumber-java8:4.7.4'
     compile 'io.cucumber:cucumber-junit:4.7.4'
     compile 'com.konghq:unirest-java:3.3.00'
+    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
 }
 
 task cucumber() {

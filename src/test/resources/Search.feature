@@ -4,7 +4,11 @@ Feature: As a client, I want to find used car, so I can get actual information
 
   @Regress
   Scenario: Filter sedan body type
-    Given create list of offers
+    Given created list of offers
+    And in database inserted following offers:
+      | Company | Model | Color | Price | Body type |
+      | BMW     | M5    | Blue  | 10000 | Sedan     |
+      | BMW     | M3    | Black | 9000  | Sedan     |
     And site "https://auto.ru/" opened
     When click on the element "Car" in widget Main
     Then text "Легковые автомобили" should be visible

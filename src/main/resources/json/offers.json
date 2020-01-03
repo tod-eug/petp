@@ -1,0 +1,977 @@
+[
+  {
+    "availability": "IN_STOCK",
+    "category": "cars",
+    "old_category_id": 15,
+    "color_hex": "040001",
+    "description": "Timely service. Passed all THAT. Service book. I did not participate in an accident. A set of summer tires as a gift. Reason for sale - Nowhere to ride. Over the past year, 3,000 km mileage. Non-smoked interior. Equipped with the author's anti-theft system.",
+    "is_favorite": false,
+    "section": "used",
+    "seller_type": "PRIVATE",
+    "status": "ACTIVE",
+    "delivery_info": {},
+    "additional_info": {
+      "creation_date": "1573639384000",
+      "fresh_date": "1577876482200",
+      "is_on_moderation": false,
+      "not_disturb": true,
+      "chat_only": false,
+      "daysFromActualization": null,
+      "isAutorenewActive": false,
+      "hot_info": {
+        "is_hot": false
+      }
+    },
+    "autostrategies": [],
+    "credit_info": {},
+    "brand_cert_info": {},
+    "counters": {},
+    "daily_counters": [],
+    "documents": {
+      "custom_cleared": true,
+      "license_plate": "******|50",
+      "owners_number": 3,
+      "pts": "ORIGINAL",
+      "vin": "JMB**************",
+      "vin_resolution": "UNTRUSTED",
+      "year": 2005
+    },
+    "grouping_info": null,
+    "hash": "a7483550",
+    "id": "1093598428",
+    "price_info": {
+      "price": 1550000,
+      "currency": "RUR",
+      "EUR": 22341,
+      "RUR": 1550000,
+      "USD": 25038
+    },
+    "price_history": [
+      {
+        "EUR": 22341,
+        "RUR": 1550000,
+        "USD": 25038,
+        "create_timestamp": 1576426824000
+      }
+    ],
+    "recall_info": {},
+    "saleId": "1093598428-a7483550",
+    "salon": null,
+    "service_prices": [],
+    "sub_category": "cars",
+    "tags": [
+      "allowed_for_credit",
+      "vin_resolution_untrusted",
+      "available_for_checkup",
+      "vin_checked",
+      "low_mileage",
+      "pts_original"
+    ],
+    "vehicle_info": {
+      "configuration": {
+        "id": "4601971",
+        "body_type": "SEDAN",
+        "doors_count": 4,
+        "auto_class": "C",
+        "trunk_volume_min": 430,
+        "body_type_group": "SEDAN",
+        "main_photo": {
+          "sizes": {
+            "orig": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d0595693e23814381ad53045b/orig",
+            "wizardv3mr": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d0595693e23814381ad53045b/wizardv3mr",
+            "cattouch": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d0595693e23814381ad53045b/cattouch"
+          }
+        }
+      },
+      "complectation": {
+        "id": "0"
+      },
+      "equipment": {
+        "engine-proof": true,
+        "tinted-glass": true,
+        "airbag-driver": true,
+        "isofix": true,
+        "sport-seats": true,
+        "usb": true,
+        "aux": true,
+        "electro-window-front": true,
+        "xenon": true,
+        "audiosystem-tv": true,
+        "ashtray-and-cigarette-lighter": true,
+        "airbag-passenger": true,
+        "front-centre-armrest": true,
+        "computer": true,
+        "navigation": true,
+        "wheel-power": true,
+        "rear-camera": true,
+        "lock": true,
+        "fabric-seats": true,
+        "electro-mirrors": true,
+        "electro-window-back": true,
+        "alloy-wheel-disks": true,
+        "leather-gear-stick": true,
+        "mirrors-heat": true,
+        "17-inch-wheels": true,
+        "condition": true,
+        "abs": true,
+        "wheel-leather": true,
+        "immo": true,
+        "12v-socket": true
+      },
+      "mark_info": {
+        "code": "MITSUBISHI",
+        "name": "Mitsubishi",
+        "logo": {
+          "name": "mark-logo",
+          "sizes": {
+            "logo": "//avatars.mds.yandex.net/get-verba/787013/2a00000164d5651d2ae1245140f43816fc51/logo",
+            "big-logo": "//avatars.mds.yandex.net/get-verba/787013/2a00000164d5651d2ae1245140f43816fc51/dealer_logo"
+          }
+        }
+      },
+      "model_info": {
+        "code": "LANCER_EVOLUTION",
+        "name": "Lancer Evolution",
+        "morphology": {},
+        "nameplate": {
+          "code": "",
+          "name": "",
+          "semantic_url": ""
+        }
+      },
+      "steering_wheel": "LEFT",
+      "super_gen": {
+        "id": "3484176",
+        "name": "VIII",
+        "ru_name": "8",
+        "year_from": 2003,
+        "year_to": 2005,
+        "price_segment": "MEDIUM"
+      },
+      "tech_param": {
+        "id": "20395053",
+        "displacement": 1997,
+        "engine_type": "GASOLINE",
+        "gear_type": "ALL_WHEEL_DRIVE",
+        "transmission": "MECHANICAL",
+        "power": 265,
+        "power_kvt": 195,
+        "human_name": "2.0 MT (265 л.с.) 4WD",
+        "acceleration": 6.1,
+        "clearance_min": 140,
+        "fuel_rate": 10.9
+      },
+      "vendor": "JAPANESE"
+    }
+  },
+  {
+    "availability": "IN_STOCK",
+    "category": "cars",
+    "old_category_id": 15,
+    "color_hex": "FAFBFB",
+    "description": "Timely service. Passed all THAT. Service book. I did not participate in an accident. A set of summer tires as a gift. Reason for sale - Nowhere to ride. Over the past year, 3,000 km mileage. Non-smoked interior. Equipped with the author's anti-theft system.",
+    "is_favorite": false,
+    "section": "new",
+    "seller_type": "COMMERCIAL",
+    "status": "ACTIVE",
+    "delivery_info": {},
+    "additional_info": {
+      "creation_date": "1577267042000",
+      "exchange": true,
+      "fresh_date": "1577267042000",
+      "is_on_moderation": false,
+      "chat_only": false,
+      "daysFromActualization": null,
+      "isAutorenewActive": false,
+      "hot_info": {
+        "is_hot": false
+      }
+    },
+    "autostrategies": [],
+    "credit_info": {},
+    "brand_cert_info": {},
+    "counters": {},
+    "daily_counters": [],
+    "discount_options": {},
+    "documents": {
+      "custom_cleared": true,
+      "pts": "ORIGINAL",
+      "vin": "VF7**************",
+      "year": 2018
+    },
+    "grouping_info": null,
+    "hash": "068d6ef0",
+    "id": "1084008191",
+    "price_info": {
+      "price": 1317000,
+      "currency": "RUR",
+      "EUR": 18983,
+      "RUR": 1317000,
+      "USD": 21274
+    },
+    "price_history": [
+      {
+        "EUR": 18983,
+        "RUR": 1317000,
+        "USD": 21274,
+        "create_timestamp": 1577267042000
+      }
+    ],
+    "recall_info": {},
+    "saleId": "1084008191-068d6ef0",
+    "service_prices": [],
+    "sub_category": "cars",
+    "tags": [
+      "low_mileage",
+      "safe_car",
+      "high_reviews_mark"
+    ],
+    "vehicle_info": {
+      "configuration": {
+        "id": "21125123",
+        "body_type": "ALLROAD_5_DOORS",
+        "doors_count": 5,
+        "auto_class": "J",
+        "trunk_volume_min": 410,
+        "trunk_volume_max": 1289,
+        "body_type_group": "ALLROAD_5_DOORS",
+        "main_photo": {
+          "sizes": {
+            "orig": "//avatars.mds.yandex.net/get-verba/787013/2a000001618a30db7c414a0f957eaeb2fd7e/orig",
+            "wizardv3mr": "//avatars.mds.yandex.net/get-verba/787013/2a000001618a30db7c414a0f957eaeb2fd7e/wizardv3mr",
+            "cattouch": "//avatars.mds.yandex.net/get-verba/787013/2a000001618a30db7c414a0f957eaeb2fd7e/cattouch"
+          }
+        }
+      },
+      "complectation": {
+        "id": "21200980",
+        "name": "Shine",
+        "available_options": [
+          "cruise-control",
+          "multi-wheel",
+          "airbag-passenger",
+          "navigation",
+          "roof-rails",
+          "lock",
+          "electro-mirrors",
+          "mirrors-heat",
+          "cooling-box",
+          "computer",
+          "fabric-seats",
+          "steel-wheels",
+          "airbag-side",
+          "abs",
+          "climate-control-1",
+          "auto-mirrors",
+          "tinted-glass",
+          "esp",
+          "usb",
+          "audiopreparation",
+          "ashtray-and-cigarette-lighter",
+          "front-centre-armrest",
+          "servo",
+          "electro-window-back",
+          "body-mouldings",
+          "park-assist-r",
+          "airbag-driver",
+          "isofix",
+          "aux",
+          "electro-window-front",
+          "hcc",
+          "airbag-curtain",
+          "ptf",
+          "rain-sensor",
+          "audiosystem-cd",
+          "front-seats-heat",
+          "power-child-locks-rear-doors",
+          "bluetooth",
+          "wheel-configuration2",
+          "wheel-configuration1",
+          "immo",
+          "windscreen-heat",
+          "12v-socket",
+          "third-rear-headrest"
+        ]
+      },
+      "equipment": {
+        "cruise-control": true,
+        "tinted-glass": true,
+        "esp": true,
+        "airbag-driver": true,
+        "usb": true,
+        "isofix": true,
+        "aux": true,
+        "electro-window-front": true,
+        "multi-wheel": true,
+        "hcc": true,
+        "ashtray-and-cigarette-lighter": true,
+        "airbag-curtain": true,
+        "airbag-passenger": true,
+        "front-centre-armrest": true,
+        "navigation": true,
+        "computer": true,
+        "roof-rails": true,
+        "lock": true,
+        "servo": true,
+        "fabric-seats": true,
+        "electro-mirrors": true,
+        "electro-window-back": true,
+        "steel-wheels": true,
+        "ptf": true,
+        "rain-sensor": true,
+        "airbag-side": true,
+        "mirrors-heat": true,
+        "body-mouldings": true,
+        "audiosystem-cd": true,
+        "cooling-box": true,
+        "abs": true,
+        "front-seats-heat": true,
+        "power-child-locks-rear-doors": true,
+        "bluetooth": true,
+        "wheel-configuration2": true,
+        "wheel-configuration1": true,
+        "immo": true,
+        "windscreen-heat": true,
+        "climate-control-1": true,
+        "auto-mirrors": true,
+        "park-assist-r": true,
+        "12v-socket": true,
+        "third-rear-headrest": true
+      },
+      "mark_info": {
+        "code": "CITROEN",
+        "name": "Citroen",
+        "logo": {
+          "name": "mark-logo",
+          "sizes": {
+            "logo": "//avatars.mds.yandex.net/get-verba/937147/2a00000160944827d8c0de9a36a30a3fe161/logo",
+            "big-logo": "//avatars.mds.yandex.net/get-verba/937147/2a00000160944827d8c0de9a36a30a3fe161/dealer_logo"
+          }
+        }
+      },
+      "model_info": {
+        "code": "C3_AIRCROSS",
+        "name": "C3 Aircross",
+        "morphology": {},
+        "nameplate": {
+          "code": "",
+          "name": "",
+          "semantic_url": ""
+        }
+      },
+      "steering_wheel": "LEFT",
+      "super_gen": {
+        "id": "21125092",
+        "year_from": 2017,
+        "price_segment": "ECONOMY"
+      },
+      "tech_param": {
+        "id": "21200842",
+        "displacement": 1199,
+        "engine_type": "GASOLINE",
+        "gear_type": "FORWARD_CONTROL",
+        "transmission": "AUTOMATIC",
+        "power": 110,
+        "power_kvt": 81,
+        "acceleration": 10.6,
+        "clearance_min": 175,
+        "fuel_rate": 6.5
+      },
+      "vendor": "EUROPEAN"
+    }
+  },
+  {
+    "availability": "IN_STOCK",
+    "category": "cars",
+    "old_category_id": 15,
+    "color_hex": "CACECB",
+    "description": "Timely service. Passed all THAT. Service book. I did not participate in an accident. A set of summer tires as a gift. Reason for sale - Nowhere to ride. Over the past year, 3,000 km mileage. Non-smoked interior. Equipped with the author's anti-theft system.",
+    "is_favorite": false,
+    "section": "used",
+    "seller_type": "PRIVATE",
+    "status": "ACTIVE",
+    "delivery_info": {},
+    "additional_info": {
+      "creation_date": "1575970202000",
+      "fresh_date": "1577959078933",
+      "is_on_moderation": false,
+      "not_disturb": true,
+      "chat_only": false,
+      "daysFromActualization": null,
+      "isAutorenewActive": false,
+      "hot_info": {
+        "is_hot": false
+      }
+    },
+    "autostrategies": [],
+    "credit_info": {},
+    "brand_cert_info": {},
+    "counters": {},
+    "daily_counters": [],
+    "documents": {
+      "custom_cleared": true,
+      "license_plate": "******|197",
+      "owners_number": 1,
+      "pts": "ORIGINAL",
+      "purchase_date": {
+        "year": 2012,
+        "month": 7
+      },
+      "vin": "VSK**************",
+      "vin_resolution": "OK",
+      "year": 2012
+    },
+    "grouping_info": null,
+    "hash": "30c0a0e3",
+    "id": "1094370450",
+    "price_info": {
+      "price": 1245000,
+      "currency": "RUR",
+      "EUR": 17945,
+      "RUR": 1245000,
+      "USD": 20111
+    },
+    "price_history": [
+      {
+        "EUR": 17945,
+        "RUR": 1245000,
+        "USD": 20111,
+        "create_timestamp": 1575969151000
+      }
+    ],
+    "recall_info": {},
+    "saleId": "1094370450-30c0a0e3",
+    "salon": null,
+    "service_prices": [],
+    "sub_category": "cars",
+    "tags": [
+      "badge",
+      "allowed_for_credit",
+      "autoru_exclusive",
+      "vin_offers_history",
+      "available_for_checkup",
+      "vin_resolution_ok",
+      "vin_checked",
+      "frame",
+      "low_mileage",
+      "one_owner",
+      "pts_original",
+      "high_reviews_mark"
+    ],
+    "vehicle_info": {
+      "configuration": {
+        "id": "6842765",
+        "body_type": "ALLROAD_5_DOORS",
+        "doors_count": 5,
+        "auto_class": "J",
+        "trunk_volume_min": 515,
+        "trunk_volume_max": 2091,
+        "body_type_group": "ALLROAD_5_DOORS",
+        "main_photo": {
+          "sizes": {
+            "orig": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d4a5a63691e788ccab511abbd/orig",
+            "wizardv3mr": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d4a5a63691e788ccab511abbd/wizardv3mr",
+            "cattouch": "//avatars.mds.yandex.net/get-verba/787013/2a000001609d4a5a63691e788ccab511abbd/cattouch"
+          }
+        },
+        "tags": [
+          "frame"
+        ]
+      },
+      "complectation": {
+        "id": "8507510",
+        "name": "SE (CC-JE)",
+        "available_options": [
+          "cruise-control",
+          "multi-wheel",
+          "airbag-passenger",
+          "roof-rails",
+          "lock",
+          "door-sill-panel",
+          "electro-mirrors",
+          "mirrors-heat",
+          "computer",
+          "seat-transformation",
+          "wheel-power",
+          "light-cleaner",
+          "fabric-seats",
+          "airbag-side",
+          "abs",
+          "wheel-leather",
+          "third-row-seats",
+          "climate-control-1",
+          "tinted-glass",
+          "esp",
+          "usb",
+          "audiopreparation",
+          "electro-window-back",
+          "17-inch-wheels",
+          "body-mouldings",
+          "folding-front-passenger-seat",
+          "condition",
+          "airbag-driver",
+          "isofix",
+          "aux",
+          "electro-window-front",
+          "light-sensor",
+          "hcc",
+          "airbag-curtain",
+          "alarm",
+          "leather-gear-stick",
+          "ptf",
+          "rain-sensor",
+          "audiosystem-cd",
+          "front-seats-heat",
+          "power-child-locks-rear-doors",
+          "bluetooth",
+          "wheel-configuration1",
+          "immo",
+          "12v-socket",
+          "third-rear-headrest"
+        ]
+      },
+      "equipment": {
+        "cruise-control": true,
+        "tinted-glass": true,
+        "esp": true,
+        "usb": true,
+        "multi-wheel": true,
+        "airbag-passenger": true,
+        "front-centre-armrest": true,
+        "roof-rails": true,
+        "lock": true,
+        "door-sill-panel": true,
+        "electro-mirrors": true,
+        "electro-window-back": true,
+        "feedback-alarm": true,
+        "mirrors-heat": true,
+        "17-inch-wheels": true,
+        "body-mouldings": true,
+        "folding-front-passenger-seat": true,
+        "engine-proof": true,
+        "airbag-driver": true,
+        "aux": true,
+        "isofix": true,
+        "electro-window-front": true,
+        "light-sensor": true,
+        "hcc": true,
+        "airbag-curtain": true,
+        "computer": true,
+        "seat-transformation": true,
+        "wheel-power": true,
+        "alarm": true,
+        "light-cleaner": true,
+        "fabric-seats": true,
+        "alloy-wheel-disks": true,
+        "ptf": true,
+        "leather-gear-stick": true,
+        "rain-sensor": true,
+        "airbag-side": true,
+        "audiosystem-cd": true,
+        "seats-7": true,
+        "abs": true,
+        "bluetooth": true,
+        "power-child-locks-rear-doors": true,
+        "front-seats-heat": true,
+        "wheel-leather": true,
+        "wheel-configuration1": true,
+        "immo": true,
+        "third-row-seats": true,
+        "climate-control-1": true,
+        "12v-socket": true,
+        "third-rear-headrest": true
+      },
+      "mark_info": {
+        "code": "NISSAN",
+        "name": "Nissan",
+        "logo": {
+          "name": "mark-logo",
+          "sizes": {
+            "logo": "//avatars.mds.yandex.net/get-verba/216201/2a00000164d565689df97c942c26d0a7cf2b/logo",
+            "big-logo": "//avatars.mds.yandex.net/get-verba/216201/2a00000164d565689df97c942c26d0a7cf2b/dealer_logo"
+          }
+        }
+      },
+      "model_info": {
+        "code": "PATHFINDER",
+        "name": "Pathfinder",
+        "morphology": {},
+        "nameplate": {
+          "code": "",
+          "name": "",
+          "semantic_url": ""
+        }
+      },
+      "steering_wheel": "LEFT",
+      "super_gen": {
+        "id": "6842747",
+        "year_from": 2010,
+        "year_to": 2014,
+        "price_segment": "MEDIUM"
+      },
+      "tech_param": {
+        "id": "6842777",
+        "displacement": 2488,
+        "engine_type": "DIESEL",
+        "gear_type": "ALL_WHEEL_DRIVE",
+        "transmission": "AUTOMATIC",
+        "power": 190,
+        "power_kvt": 140,
+        "human_name": "2.5d AT (190 л.с.) 4WD",
+        "acceleration": 10.7,
+        "clearance_min": 228,
+        "fuel_rate": 9
+      },
+      "vendor": "JAPANESE"
+    }
+  },
+  {
+    "availability": "IN_STOCK",
+    "category": "cars",
+    "old_category_id": 15,
+    "color_hex": "660099",
+    "description": "Timely service. Passed all THAT. Service book. I did not participate in an accident. A set of summer tires as a gift. Reason for sale - Nowhere to ride. Over the past year, 3,000 km mileage. Non-smoked interior. Equipped with the author's anti-theft system.",
+    "is_favorite": false,
+    "section": "used",
+    "seller_type": "PRIVATE",
+    "status": "ACTIVE",
+    "delivery_info": {},
+    "additional_info": {
+      "creation_date": "1577959422151",
+      "fresh_date": "1577959422151",
+      "is_on_moderation": false,
+      "not_disturb": true,
+      "chat_only": false,
+      "daysFromActualization": null,
+      "isAutorenewActive": false,
+      "hot_info": {
+        "is_hot": false
+      }
+    },
+    "autostrategies": [],
+    "credit_info": {},
+    "brand_cert_info": {},
+    "counters": {},
+    "daily_counters": [],
+    "documents": {
+      "custom_cleared": true,
+      "license_plate": "******|47",
+      "owners_number": 1,
+      "pts": "ORIGINAL",
+      "purchase_date": {
+        "year": 2016,
+        "month": 8
+      },
+      "vin": "XTA**************",
+      "vin_resolution": "OK",
+      "year": 2016
+    },
+    "grouping_info": null,
+    "hash": "3c2c89e4",
+    "id": "1093632220",
+    "price_info": {
+      "price": 469000,
+      "currency": "RUR",
+      "EUR": 6760,
+      "RUR": 469000,
+      "USD": 7576
+    },
+    "price_history": [
+      {
+        "EUR": 6760,
+        "RUR": 469000,
+        "USD": 7576,
+        "create_timestamp": 1576839706000
+      }
+    ],
+    "recall_info": {},
+    "saleId": "1093632220-3c2c89e4",
+    "salon": null,
+    "service_prices": [],
+    "sub_category": "cars",
+    "tags": [
+      "badge",
+      "allowed_for_credit",
+      "autoru_exclusive",
+      "vin_offers_history",
+      "available_for_checkup",
+      "vin_resolution_ok",
+      "vin_checked",
+      "low_mileage",
+      "one_owner",
+      "pts_original"
+    ],
+    "vehicle_info": {
+      "configuration": {
+        "id": "7951400",
+        "body_type": "WAGON_5_DOORS",
+        "doors_count": 5,
+        "auto_class": "C",
+        "trunk_volume_min": 135,
+        "trunk_volume_max": 2350,
+        "body_type_group": "WAGON",
+        "main_photo": {
+          "sizes": {
+            "orig": "//avatars.mds.yandex.net/get-verba/937147/2a000001609d2b1c333721d1d8a41fc2357b/orig",
+            "wizardv3mr": "//avatars.mds.yandex.net/get-verba/937147/2a000001609d2b1c333721d1d8a41fc2357b/wizardv3mr",
+            "cattouch": "//avatars.mds.yandex.net/get-verba/937147/2a000001609d2b1c333721d1d8a41fc2357b/cattouch"
+          }
+        }
+      },
+      "complectation": {
+        "id": "0"
+      },
+      "equipment": {
+        "engine-proof": true,
+        "airbag-driver": true,
+        "aux": true,
+        "seats-5": true,
+        "electro-window-front": true,
+        "turnbuckle": true,
+        "spare-wheel": true,
+        "airbag-passenger": true,
+        "condition": true,
+        "bluetooth": true,
+        "wheel-power": true,
+        "alarm": true,
+        "music-super": true,
+        "15-inch-wheels": true
+      },
+      "mark_info": {
+        "code": "VAZ",
+        "logo": {
+          "name": "mark-logo",
+          "sizes": {
+            "logo": "//avatars.mds.yandex.net/get-verba/997355/2a00000164d5646c6dbfaeb15f639203d541/logo",
+            "big-logo": "//avatars.mds.yandex.net/get-verba/997355/2a00000164d5646c6dbfaeb15f639203d541/dealer_logo"
+          }
+        }
+      },
+      "model_info": {
+        "code": "LARGUS",
+        "name": "Largus",
+        "morphology": {},
+        "nameplate": {
+          "code": "",
+          "name": "",
+          "semantic_url": ""
+        }
+      },
+      "steering_wheel": "LEFT",
+      "super_gen": {
+        "id": "7951397",
+        "name": "I",
+        "year_from": 2012,
+        "price_segment": "ECONOMY"
+      },
+      "tech_param": {
+        "id": "7951404",
+        "displacement": 1598,
+        "engine_type": "GASOLINE",
+        "gear_type": "FORWARD_CONTROL",
+        "transmission": "MECHANICAL",
+        "power": 105,
+        "power_kvt": 77,
+        "acceleration": 13.1,
+        "clearance_min": 145,
+        "fuel_rate": 9
+      },
+      "vendor": "RUSSIAN"
+    }
+  },
+  {
+    "availability": "IN_STOCK",
+    "category": "cars",
+    "old_category_id": 15,
+    "color_hex": "0000CC",
+    "description": "Timely service. Passed all THAT. Service book. I did not participate in an accident. A set of summer tires as a gift. Reason for sale - Nowhere to ride. Over the past year, 3,000 km mileage. Non-smoked interior. Equipped with the author's anti-theft system.",
+    "is_favorite": false,
+    "section": "used",
+    "seller_type": "PRIVATE",
+    "status": "ACTIVE",
+    "delivery_info": {},
+    "additional_info": {
+      "creation_date": "1577958205000",
+      "fresh_date": "1577960005000",
+      "is_on_moderation": false,
+      "not_disturb": true,
+      "chat_only": false,
+      "daysFromActualization": null,
+      "isAutorenewActive": false,
+      "hot_info": {
+        "is_hot": false
+      }
+    },
+    "autostrategies": [],
+    "credit_info": {},
+    "brand_cert_info": {},
+    "counters": {},
+    "daily_counters": [],
+    "documents": {
+      "custom_cleared": true,
+      "license_plate": "******|199",
+      "owners_number": 2,
+      "pts": "ORIGINAL",
+      "vin": "KMH**************",
+      "vin_resolution": "OK",
+      "year": 2008
+    },
+    "grouping_info": null,
+    "hash": "c592da34",
+    "id": "1094905788",
+    "price_info": {
+      "price": 316000,
+      "currency": "RUR",
+      "EUR": 4555,
+      "RUR": 316000,
+      "USD": 5105
+    },
+    "price_history": [
+      {
+        "EUR": 4555,
+        "RUR": 316000,
+        "USD": 5105,
+        "create_timestamp": 1577957487000
+      }
+    ],
+    "recall_info": {},
+    "saleId": "1094905788-c592da34",
+    "salon": null,
+    "service_prices": [],
+    "services": [],
+    "sub_category": "cars",
+    "tags": [
+      "allowed_for_credit",
+      "autoru_exclusive",
+      "vin_offers_history",
+      "available_for_checkup",
+      "vin_resolution_ok",
+      "vin_checked",
+      "pts_original"
+    ],
+    "vehicle_info": {
+      "configuration": {
+        "id": "2306916",
+        "body_type": "SEDAN",
+        "doors_count": 4,
+        "auto_class": "C",
+        "trunk_volume_min": 460,
+        "body_type_group": "SEDAN",
+        "main_photo": {
+          "sizes": {
+            "orig": "//avatars.mds.yandex.net/get-verba/787013/2a000001609cfcd13986125e3909714f02da/orig",
+            "wizardv3mr": "//avatars.mds.yandex.net/get-verba/787013/2a000001609cfcd13986125e3909714f02da/wizardv3mr",
+            "cattouch": "//avatars.mds.yandex.net/get-verba/787013/2a000001609cfcd13986125e3909714f02da/cattouch"
+          }
+        }
+      },
+      "complectation": {
+        "id": "3724656",
+        "name": "GLS climate-control",
+        "available_options": [
+          "airbag-passenger",
+          "lock",
+          "electro-mirrors",
+          "mirrors-heat",
+          "computer",
+          "seat-transformation",
+          "wheel-power",
+          "fabric-seats",
+          "airbag-side",
+          "abs",
+          "climate-control-1",
+          "esp",
+          "audiopreparation",
+          "electro-window-back",
+          "condition",
+          "airbag-driver",
+          "electro-window-front",
+          "alarm",
+          "paint-metallic",
+          "ptf",
+          "audiosystem-cd",
+          "front-seats-heat",
+          "wheel-configuration2",
+          "wheel-configuration1",
+          "immo"
+        ]
+      },
+      "equipment": {
+        "engine-proof": true,
+        "tinted-glass": true,
+        "esp": true,
+        "airbag-driver": true,
+        "aux": true,
+        "electro-window-front": true,
+        "spare-wheel": true,
+        "passenger-seat-updown": true,
+        "airbag-passenger": true,
+        "computer": true,
+        "seat-transformation": true,
+        "wheel-power": true,
+        "alarm": true,
+        "lock": true,
+        "electro-mirrors": true,
+        "electro-window-back": true,
+        "alloy-wheel-disks": true,
+        "paint-metallic": true,
+        "ptf": true,
+        "airbag-side": true,
+        "mirrors-heat": true,
+        "audiosystem-cd": true,
+        "velvet-seats": true,
+        "abs": true,
+        "front-seats-heat": true,
+        "wheel-configuration2": true,
+        "wheel-configuration1": true,
+        "immo": true,
+        "climate-control-1": true
+      },
+      "mark_info": {
+        "code": "HYUNDAI",
+        "name": "Hyundai",
+        "ru_name": "Хендай",
+        "logo": {
+          "name": "mark-logo",
+          "sizes": {
+            "logo": "//avatars.mds.yandex.net/get-verba/787013/2a00000164d563b0e656d35bf0579cf83b44/logo",
+            "big-logo": "//avatars.mds.yandex.net/get-verba/787013/2a00000164d563b0e656d35bf0579cf83b44/dealer_logo"
+          }
+        }
+      },
+      "model_info": {
+        "code": "ELANTRA",
+        "name": "Elantra",
+        "morphology": {},
+        "nameplate": {
+          "code": "",
+          "name": "",
+          "semantic_url": ""
+        }
+      },
+      "steering_wheel": "LEFT",
+      "super_gen": {
+        "id": "2306915",
+        "name": "IV (HD)",
+        "ru_name": "4 (HD)",
+        "year_from": 2006,
+        "year_to": 2011,
+        "price_segment": "MEDIUM"
+      },
+      "tech_param": {
+        "id": "2306918",
+        "displacement": 1591,
+        "engine_type": "GASOLINE",
+        "gear_type": "FORWARD_CONTROL",
+        "transmission": "AUTOMATIC",
+        "power": 122,
+        "power_kvt": 90,
+        "human_name": "1.6 AT (122 л.с.)",
+        "acceleration": 12.2,
+        "clearance_min": 160,
+        "fuel_rate": 6.7
+      },
+      "vendor": "KOREAN"
+    }
+  }
+]

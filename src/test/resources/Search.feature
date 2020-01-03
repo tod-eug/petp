@@ -4,7 +4,8 @@ Feature: As a client, I want to find used car, so I can get actual information
 
   @Regress
   Scenario: Filter sedan body type
-    Given site "https://auto.ru/" opened
+    Given create list of offers
+    And site "https://auto.ru/" opened
     When click on the element "Car" in widget Main
     Then text "Легковые автомобили" should be visible
     When click on the field "Body type" in widget Filter

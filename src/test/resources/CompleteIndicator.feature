@@ -18,7 +18,6 @@
       And element "Company and Model" should have class "progress-bar-item_state_active" in widget Progress Bar
 
 
-#      Refactor preconditions through inject cookie
     @Regress
     Scenario: Filling color and run
       Given site "https://auto.ru/" opened

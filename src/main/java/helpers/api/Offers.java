@@ -1,6 +1,6 @@
 package helpers.api;
 
-import core.DataExchanger;
+import core.config.Configuration;
 import core.exceptions.HttpClientException;
 import core.httpclient.HttpClientFactory;
 import kong.unirest.HttpResponse;
@@ -21,7 +21,7 @@ public class Offers {
     public static void letCreateOffers() {
 
         UnirestInstance httpClient = HttpClientFactory.createHttpClient();
-        HttpResponse<JsonNode> response = httpClient.get(DataExchanger.getValue("apiPath")).asJson();
+        HttpResponse<JsonNode> response = httpClient.get(Configuration.configurationProperties.get("API_PATH")).asJson();
 
         if (!response.isSuccess()) {
             throw new HttpClientException("Error status: " + response.getStatus() + "\nError text: " + response.getStatusText());
@@ -35,7 +35,7 @@ public class Offers {
     public static void letCreateOffersFromFile() {
 
         UnirestInstance httpClient = HttpClientFactory.createHttpClient();
-        HttpResponse<JsonNode> response = httpClient.post(DataExchanger.getValue("apiPath")).body(getJsonFromFile("src/main/resources/json/offers.json")).asJson();
+        HttpResponse<JsonNode> response = httpClient.post(Configuration.configurationProperties.get("API_PATH")).body(getJsonFromFile("src/main/resources/json/offers.json")).asJson();
 
         if (!response.isSuccess()) {
             throw new HttpClientException("Error status: " + response.getStatus() + "\nError text: " + response.getStatusText());
@@ -72,7 +72,7 @@ public class Offers {
         json.put(car2);
         json.put(car3);
 
-        HttpResponse<JsonNode> response = httpClient.post(DataExchanger.getValue("apiPath")).body(json.toString()).asJson();
+        HttpResponse<JsonNode> response = httpClient.post(Configuration.configurationProperties.get("API_PATH")).body(json.toString()).asJson();
 
         if (!response.isSuccess()) {
             throw new HttpClientException("Error status: " + response.getStatus() + "\nError text: " + response.getStatusText());
